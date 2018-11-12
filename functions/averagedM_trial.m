@@ -1,4 +1,13 @@
-function [] = generatedata_Figure9(d_data, d_est, noise_sigma, filename, seed)
+function [] = averagedM_trial(d_data, d_est, sigma, seed, filename)
+% Calcaulates spatially-averaged M as a function of d_q
+% for a specific trial (seed).
+%
+% Arguments:
+%   d_data: spatial spacing of model data
+%   d_est: spatial spacing of estimated data
+%   sigma: used to generate noisy data with normrnd(P, noise)
+%   seed (int)
+%   filename (str): name of output file   
 
 dq_values = [0:0.01:0.25 0.3 0.4 0.5];
 dcut_values = [0.14, 0.21, 0.28, 0.35, 0.42, 0.49];
@@ -26,7 +35,7 @@ for i = 1:M
     p = 1-q;
         
     rng(seed);
-    P_noisy = normrnd(P, noise_sigma);          
+    P_noisy = normrnd(P, sigma);          
     P_smooth = csaps({H_data, H_data}, P_noisy, p, {H_est, H_est});       
     del2P = 4*del2(P_smooth, d_est);                 
 
@@ -41,6 +50,6 @@ end
 
 save(filename, 'estimates_1', 'estimates_2', 'estimates_3', ...
     'estimates_4', 'estimates_5', 'estimates_6', ...
-    'dq_values',  'dcut_values', 'd_data', 'd_est', 'noise_sigma', 'seed')
+    'dq_values',  'dcut_values', 'd_data', 'd_est', 'sigma', 'seed')
 end
 
