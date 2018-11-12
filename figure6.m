@@ -1,0 +1,13 @@
+% To be able to run this code you must first run figure4.m and figure5.m.
+
+clear all
+close all
+addpath('functions')
+
+letters = 'abcdefghijklmnop';
+
+for letter = letters
+    rmse(['data/figure4/bias_', letter], ...
+        ['data/figure5/std_', letter], ...
+        ['data/figure6/rmse_', letter])
+end
