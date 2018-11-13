@@ -10,11 +10,11 @@ import matplotlib.pyplot as plt
 import numpy as np
 from matplotlib import cm
 import matplotlib.gridspec as gridspec
-import matplotlib as mpl
-mpl.rcParams['mathtext.fontset'] = 'cm'
-mpl.rcParams['mathtext.rm'] = 'serif'
+from set_style import set_style
 
-fig = plt.figure(figsize=[6.4, 6.4])
+set_style('article', w=1, h=3)
+
+fig = plt.figure()
 gs = gridspec.GridSpec(3, 4)
 ax1 = plt.subplot(gs[0,0:2])
 ax2 = plt.subplot(gs[0,2:])
@@ -31,7 +31,7 @@ for i in range(0,4):
     delta_smooth = data['delta_smooth_vector']
     r =  data['r']
     q =  data['q'][0][0]
-    ax1.plot(r, delta_smooth, '-o', markersize=2, color=tableau10cb[i], markeredgecolor=tableau10cb[i], lw=1.5, label=str(q))
+    ax1.plot(r, delta_smooth, '-o', color=tableau10cb[i], markeredgecolor=tableau10cb[i], label=str(q))
 leg = ax1.legend(frameon=0, fontsize='x-small')
 leg.set_title('q', prop={'size':'small'})
 # axes
@@ -42,14 +42,14 @@ ax1.set_yticks([0,1])
 ax1.axvline(x=3.76e-3, ymax=0.525, color='k', ls=':')
 ax1.axhline(y=0.5, xmax=0.0752, color='k', ls=':')
 # title and labels
-ax1.set_title('Smoothed $\delta$-function ($\hat{d}=0.005$)')
+ax1.set_title('$\delta\mathrm{_{smooth}}$ ($\hat{d}=0.005$)')
 ax1.set_xlabel('$\hat{r}$')
 ax1.set_ylabel('$\delta\mathrm{_{smooth}}$')
 
 ## B ##
 q = [1e-8, 1e-7, 1e-6, 1e-5, 1e-4];
 d_q = np.array([3.76, 6.59, 11.7, 20.9, 37.3])*1e-3; # d = 0.005 
-ax2.loglog(q, d_q, '-o', color=tableau10cb[0], markersize=2, markeredgecolor=tableau10cb[0], lw=1.5)
+ax2.loglog(q, d_q, '-o', color=tableau10cb[0], markeredgecolor=tableau10cb[0])
 # axes
 ax2.set_xlim(1e-8, 1e-4)
 ax2.set_ylim(1e-3, 1e-1)
@@ -66,9 +66,9 @@ for i in range(0,4):
     d =  data['d'][0][0]
     delta_smooth = data['delta_smooth_vector']
     if i >= 3:
-        ax3.plot(r, delta_smooth, '-o', markersize=2, color=tableau10cb[i], markeredgecolor=tableau10cb[i], lw=1.5, label=str(d))
+        ax3.plot(r, delta_smooth, '-o', color=tableau10cb[i], markeredgecolor=tableau10cb[i], label=str(d))
     else:
-        ax3.plot(r, delta_smooth, '-', color=tableau10cb[i], markeredgecolor=tableau10cb[i], lw=1.5, label=str(d))
+        ax3.plot(r, delta_smooth, '-', color=tableau10cb[i], markeredgecolor=tableau10cb[i], label=str(d))
 leg = ax3.legend(frameon=0, fontsize='x-small')
 leg.set_title('$\hat{d}$', prop={'size':'small'})
 # axes
@@ -79,14 +79,14 @@ ax3.set_yticks([0,1])
 ax3.axvline(x=4.45e-2, ymax=0.525, color='k', ls=':')
 ax3.axhline(y=0.5, xmax=0.148, color='k', ls=':')
 # title and labels
-ax3.set_title('Smoothed $\delta$-function ($q=10^{-3}$)')
+ax3.set_title('$\delta_\mathrm{smooth}$ ($q=10^{-3}$)')
 ax3.set_xlabel('$\hat{r}$')
 ax3.set_ylabel('$\delta\mathrm{_{smooth}}$')
 
 ## D ##
 d = [0.001, 0.005, 0.01, 0.05, 0.1];
 d_q = np.array([4.45, 6.65, 7.90, 11.7, 13.8])*1e-2; # q = 1e-3
-ax4.loglog(d, d_q, '-o', color=tableau10cb[0], markersize=2, markeredgecolor=tableau10cb[0], lw=1.5)
+ax4.loglog(d, d_q, '-o', color=tableau10cb[0], markeredgecolor=tableau10cb[0])
 # axes
 ax4.set_xlim(1e-3, 1e-1)
 ax4.set_ylim(1e-2, 1)
@@ -104,9 +104,9 @@ for i in range(0,2):
     q = data['q'][0][0]
     delta_smooth = data['delta_smooth_vector']
     if i == 0:
-        ax5.plot(r, delta_smooth, '-', markersize=1.5, color=tableau10cb[i], markeredgecolor=tableau10cb[i], lw=1.5, label='$q$ = %.2e, $\hat{d}$ = %.0e' % (q,d))
+        ax5.plot(r, delta_smooth, '-', color=tableau10cb[i], markeredgecolor=tableau10cb[i], label='$q$ = %.2e,\n$\hat{d}$ = %.0e' % (q,d))
     elif i == 1:
-        ax5.plot(r, delta_smooth, 'o', markersize=1.5, color=tableau10cb[i], markeredgecolor=tableau10cb[i], lw=1.5, label='$q$ = %.2e, $\hat{d}$ = %.0e' % (q,d))
+        ax5.plot(r, delta_smooth, 'o', color=tableau10cb[i], markeredgecolor=tableau10cb[i], label='$q$ = %.2e,\n $\hat{d}$ = %.0e' % (q,d))
 ax5.legend(frameon=0, fontsize='x-small')
 # axes
 ax5.set_xlim(0, 0.2)
