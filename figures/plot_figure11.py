@@ -47,6 +47,9 @@ for i in range(0,3):
         axarr[i][j].spines['right'].set_visible(False)
 
         # ticks
+        axarr[i,j].set_xticks(np.arange(0,0.51,0.1))
+        axarr[i,j].set_xticklabels(['0', '0.1', '0.2', '0.3', '0.4', '0.5'])
+        axarr[i,j].tick_params(axis='x', rotation=45)
         axarr[i][j].get_xaxis().tick_bottom()
         axarr[i][j].get_yaxis().tick_left()
 
