@@ -93,10 +93,15 @@ for i in range(0,4):
 # d_data and q_data 
 for i in range(0,4):
     a = sio.loadmat(filename[i,0])
-    axarr[i,0].set_ylabel('$\hat{d}\mathrm{_{data}}=$\n$%.3f$' % a['d_data'])
+    if i == 3:
+        axarr[i,0].set_ylabel('$\hat{d}\mathrm{_{data}}=$\n$%.2f$' % a['d_data'])
+    else:
+        axarr[i,0].set_ylabel('$\hat{d}\mathrm{_{data}}=$\n$%.3f$' % a['d_data'])
     a = sio.loadmat(filename[0,i])
-    axarr[0,i].set_xlabel('$\hat{d}\mathrm{_q}=%.2f$' % a['d_q'])
+    if i == 0:
+        axarr[0,i].set_xlabel('$\hat{d}\mathrm{_q}=%d$' % a['d_q'])
+    else:
+        axarr[0,i].set_xlabel('$\hat{d}\mathrm{_q}=%.2f$' % a['d_q'])
     axarr[0,i].xaxis.set_label_position('top')
 
-#plt.tight_layout()
 plt.savefig('figure5.pdf', dpi=300)

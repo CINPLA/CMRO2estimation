@@ -45,6 +45,9 @@ ax1.axhline(y=0.5, xmax=0.0752, color='k', ls=':')
 ax1.set_title('$\delta\mathrm{_{smooth}}$ ($\hat{d}=0.005$)')
 ax1.set_xlabel('$\hat{r}$')
 ax1.set_ylabel('$\delta\mathrm{_{smooth}}$')
+# ticks
+ax1.set_xticks(np.arange(0,0.051,0.025))
+ax1.set_xticklabels(['0', '0.025', '0.05'])
 
 ## B ##
 q = [1e-8, 1e-7, 1e-6, 1e-5, 1e-4];
@@ -82,6 +85,9 @@ ax3.axhline(y=0.5, xmax=0.148, color='k', ls=':')
 ax3.set_title('$\delta_\mathrm{smooth}$ ($q=10^{-3}$)')
 ax3.set_xlabel('$\hat{r}$')
 ax3.set_ylabel('$\delta\mathrm{_{smooth}}$')
+# ticks
+ax3.set_xticks(np.arange(0,0.31,0.15))
+ax3.set_xticklabels(['0', '0.15', '0.3'])
 
 ## D ##
 d = [0.001, 0.005, 0.01, 0.05, 0.1];
@@ -125,7 +131,7 @@ i = 0
 for ax in [ax1, ax2, ax3, ax4, ax5]:
     # ABC
     if i == 1 or i == 3:
-        ax.text(-0.2, 1.1, panel[i], transform=ax.transAxes, fontsize=16, fontweight='bold', va='top', ha='right')
+        ax.text(-0.225, 1.1, panel[i], transform=ax.transAxes, fontsize=16, fontweight='bold', va='top', ha='right')
     else:
         ax.text(-0.1, 1.1, panel[i], transform=ax.transAxes, fontsize=16, fontweight='bold', va='top', ha='right')
     # axes

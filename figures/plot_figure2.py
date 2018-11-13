@@ -27,9 +27,9 @@ for i in range(0,2):
     axarr[0,i].axvline(x=-141, linestyle='--', color='k')
     axarr[0,i].axvline(x=141, linestyle='--', color='k')
     if data['sigma'] == 0:
-        axarr[0,i].set_title('$P, \, \sigma=%d\, \mathrm{mmHg}$' % data['sigma'])
+        axarr[0,i].set_title('$P$')
     else:
-        axarr[0,i].set_title('$P, \, \sigma=%.2f\, \mathrm{mmHg}$' % data['sigma'])
+        axarr[0,i].set_title('$P+P_{\sigma}$')
 plt.setp(axarr[0,1].get_yticklabels(), visible=False)
 
 # Figure C, E, G
@@ -44,15 +44,15 @@ for i in range(1,4):
         Z = data['P']
         plt.setp(axarr[i,0].get_xticklabels(), visible=False)
         if data['sigma'] == 0:
-            axarr[i,0].set_title('$\hat{P}, \, \hat{\sigma}=%d$' % data['sigma'])
+            axarr[i,0].set_title('$\hat{P}$')
         else:
-            axarr[i,0].set_title('$\hat{P}, \, \hat{\sigma}=%.3f$' % data['sigma'])
+            axarr[i,0].set_title('$\hat{P} + \hat{P}_{\sigma}$')
     elif i == 3:
         x = data['H_est'][0]
         y = data['H_est'][0]
         X, Y = np.meshgrid(x, y)
         Z = data['P_smooth']
-        axarr[i,0].set_title('$\hat{P}\mathrm{_{smooth}}, \, \hat{\sigma}=%.3f$' % data['sigma'])
+        axarr[i,0].set_title('$\hat{P}\mathrm{_{smooth}}$')
     cmap = cm.Reds
     levels = np.arange(0,4.26,0.25)
     cset = axarr[i,0].contourf(X, Y, Z, levels, cmap='Reds', zorder=-9)
@@ -99,10 +99,7 @@ for i in range(1,4):
     # mark vessel
     vessel = mpatches.Circle((max(x)/2,max(y)/2), 6./141, facecolor='black')
     axarr[i,1].add_patch(vessel)
-    if data['sigma'] == 0:
-        axarr[i,1].set_title('$\hat{M}\mathrm{_{est}}, \, \hat{\sigma}=%d$' % data['sigma'])
-    else:
-        axarr[i,1].set_title('$\hat{M}\mathrm{_{est}}, \, \hat{\sigma}=%.3f$' % data['sigma'])
+    axarr[i,1].set_title('$\hat{M}\mathrm{_{est}}$')
     k += 1
 
 # axes equal

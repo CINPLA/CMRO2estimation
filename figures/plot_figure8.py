@@ -19,17 +19,17 @@ ax2 = fig.add_subplot(122)
 data = sio.loadmat('../data/figure8/figure8.mat')
 
 ## Figure A ##
-x = data['Hx_data'][0]
-y = data['Hy_data'][0]
+x = data['Hx_est'][0]
+y = data['Hy_est'][0]
 X, Y = np.meshgrid(x,y)
-Z = data['P_noisy']
+Z = data['P_smooth']
 cmap = cm.Reds
 levels = np.arange(0,4.26,0.1)
 cset = ax1.contourf(X, Y, Z, levels, cmap=cm.get_cmap(cmap), zorder=-9)
 ax1.set_rasterization_zorder(-1)
 ax1.set_aspect('equal')
 fig.colorbar(cset, ax=ax1, fraction=0.035, ticks=np.arange(0,4.1,1))
-ax1.set_title('$\hat{P}+\hat{P}_\sigma$')
+ax1.set_title('$\hat{P}_\mathrm{smooth}$')
 # axes
 ax1.get_xaxis().tick_bottom()
 ax1.get_yaxis().tick_left()
@@ -41,9 +41,6 @@ ax1.set(yticks=[0.5, 1.5, 2.5])
 ax1.set(yticklabels=['-1', '0', '1'])
 
 ## Figure B ##
-x = data['Hx_est'][0]
-y = data['Hy_est'][0]
-X, Y = np.meshgrid(x,y)
 Z = data['del2P']
 cmap = cm.bwr
 cset = ax2.imshow(Z, extent=[0, max(x), 0, max(y)], origin='lower', cmap=cm.get_cmap(cmap), aspect='equal')

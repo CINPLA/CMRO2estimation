@@ -33,8 +33,10 @@ for i in range(0,4):
         cbar = fig.colorbar(cset1, ax=axarr[i,j], ticks=np.arange(-100, 101, 50), extend='both')
         cbar.ax.set_yticklabels(['-100', '-50', '0', '50', '100'])
         cset1.set_clim(-100, 100)
-
-    axarr[i,0].set_ylabel('$\hat{d}\mathrm{_q}=%.2f$' % data['d_q'])
+    if i == 0:
+        axarr[i,0].set_ylabel('$\hat{d}\mathrm{_q}=%d$' % data['d_q'])
+    else:
+        axarr[i,0].set_ylabel('$\hat{d}\mathrm{_q}=%.2f$' % data['d_q'])
 
 # STD
 for i in range(0,4):
