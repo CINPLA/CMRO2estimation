@@ -8,7 +8,7 @@ import numpy as np
 from matplotlib import cm
 from set_style import set_style
 
-set_style('article', w=1, h=1)
+set_style('article', w=0.5, h=1)
 
 data = sio.loadmat('../data/figure9/figure9')
 x = data['H_data'][0]
@@ -25,10 +25,13 @@ plt.contour(X, Y, r, [0.21, 0.35, 0.49], colors='black')
 
 # axes
 plt.axes().set_aspect('equal')
+plt.yticks(np.arange(max(y)/2-1, max(y)/2+1.01, 0.5), ('-1', '-0.5', '0', '0.5', '1'))
+plt.xlabel('$\hat{x}$')
+plt.ylabel('$\hat{y}$')
 plt.xticks(np.arange(max(x)/2-1, max(x)/2+1.01, 0.5), ('-1', '-0.5', '0', '0.5', '1'))
 plt.yticks(np.arange(max(y)/2-1, max(y)/2+1.01, 0.5), ('-1', '-0.5', '0', '0.5', '1'))
 plt.xlabel('$\hat{x}$')
-plt.ylabel('$\hat{y}$', rotation=0, va='center')
+plt.ylabel('$\hat{y}$')
 
 plt.title('$\hat{P}+\hat{P}_\sigma$')
 

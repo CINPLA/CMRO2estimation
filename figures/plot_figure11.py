@@ -8,7 +8,7 @@ import numpy as np
 from matplotlib import cm
 from set_style import set_style
 
-set_style('article', w=1, h=4)
+set_style('article', w=1, h=2)
 
 filename = np.array([['../data/figure11/figure11a', '../data/figure11/figure11b', '../data/figure11/figure11c'], ['../data/figure11/figure11d', '../data/figure11/figure11e', '../data/figure11/figure11f'], ['../data/figure11/figure11g', '../data/figure11/figure11h', '../data/figure11/figure11i']])
 
@@ -30,17 +30,19 @@ for i in range(0,3):
         estimates = [data['estimates_1'][0], data['estimates_2'][0], data['estimates_3'][0], data['estimates_4'][0], data['estimates_5'][0], data['estimates_6'][0]]
 
         for k in range(0, len(dcut_values)):
-            axarr[i,j].plot(dq_values, estimates[k], 'o-', color=tableau10cb[k], markeredgecolor=tableau10cb[k], label=str(dcut_values[k]))
+            axarr[i,j].plot(dq_values, estimates[k], '-', color=tableau10cb[k], markeredgecolor=tableau10cb[k], label=str(dcut_values[k]))
 
         # titles and labels
-        if i == 0:
-            axarr[i][j].set_title('$\hat{\sigma}$ = %.3f' % (noise))
-        else:
-            axarr[i][j].set_title('$\hat{\sigma}$ = %.1f' % (noise))
+        if j == 2:
+            if i == 0:
+                axarr[i][j].set_ylabel('$\hat{\sigma}$ = %.3f' % (noise))
+            else:
+                axarr[i][j].set_ylabel('$\hat{\sigma}$ = %.1f' % (noise))
+        axarr[i,j].yaxis.set_label_position('right')
         if i == 2:
             axarr[i][j].set_xlabel('$\hat{d}\mathrm{_q}$')
-        if j == 0:
-            axarr[i][j].set_ylabel('$\hat{M}_\mathrm{est}$')
+        if i == 0:
+            axarr[i][j].set_title('$\hat{M}_\mathrm{est, avr}$')
 
         # frame lines
         axarr[i][j].spines['top'].set_visible(False)
@@ -52,6 +54,8 @@ for i in range(0,3):
         axarr[i,j].tick_params(axis='x', rotation=45)
         axarr[i][j].get_xaxis().tick_bottom()
         axarr[i][j].get_yaxis().tick_left()
+        if i == 0 or i == 1:
+            plt.setp(axarr[i,j].get_xticklabels(), visible=False)
 
         # axes
         axarr[i][j].set_xlim(0,0.5)
@@ -65,7 +69,7 @@ for i in range(0,3):
         # ABC
         axarr[i,j].text(-0.15, 1.1, panel[i,j], transform=axarr[i,j].transAxes, fontsize=16, fontweight='bold', va='top', ha='right')
 
-axarr[2,1].legend(loc='upper center', bbox_to_anchor=(0.4, -0.25), ncol=3)
+axarr[2,1].legend(loc='upper center', title='$d\mathrm{_{cut}}$', bbox_to_anchor=(0.4, -0.55), ncol=3)
 
 plt.tight_layout()
 plt.savefig('figure11.pdf', bbox_inches='tight')

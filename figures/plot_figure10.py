@@ -9,19 +9,19 @@ import matplotlib.gridspec as gridspec
 from matplotlib.font_manager import FontProperties
 from set_style import set_style
 
-set_style('article', w=1, h=4)
+set_style('article', w=1, h=2)
 
 tableau10cb = np.array([(0,107,164), (255,128,14), (171,171,171), (89,89,89), (95,158,209), (200,82,0)])/255.
 
 fig = plt.figure()
-gs = gridspec.GridSpec(4, 4)
-ax1 = plt.subplot(gs[0,1:3])
-ax2 = plt.subplot(gs[1,0:2])
-ax3 = plt.subplot(gs[1,2:])
-ax4 = plt.subplot(gs[2,0:2])
-ax5 = plt.subplot(gs[2,2:])
-ax6 = plt.subplot(gs[3,0:2])
-ax7 = plt.subplot(gs[3,2:])
+gs = gridspec.GridSpec(6, 6)
+ax1 = plt.subplot(gs[1:3,0:2])
+ax2 = plt.subplot(gs[0:2,2:4])
+ax3 = plt.subplot(gs[0:2,4:])
+ax4 = plt.subplot(gs[2:4,2:4])
+ax5 = plt.subplot(gs[2:4,4:])
+ax6 = plt.subplot(gs[4:6,2:4])
+ax7 = plt.subplot(gs[4:6,4:])
 
 # A
 data = sio.loadmat('../data/figure10/figure10_a')
@@ -30,9 +30,8 @@ dcut_values = data['dcut_values'][0]
 scaled_bias = [data['scaled_bias_1'][0], data['scaled_bias_2'][0], data['scaled_bias_3'][0], data['scaled_bias_4'][0], data['scaled_bias_5'][0], data['scaled_bias_6'][0]]
 for j in range(0,6):
     ax1.plot(dq_values, scaled_bias[j], 'o-', color=tableau10cb[j], markeredgecolor=tableau10cb[j], label=str(dcut_values[j]))
-ax1.legend(bbox_to_anchor=(1.7, 1.2), title='$d\mathrm{_{cut}}$')
-ax1.set_title('BIAS,$\, \hat{\sigma}=0$')
-ax1.set_ylabel('BIAS$[\%]$')
+ax1.legend(bbox_to_anchor=(0.95, -0.5), title='$d\mathrm{_{cut}}$')
+ax1.set_title('BIAS [\%],$\, \hat{\sigma}=0$')
 
 # BDF
 filenames = ['../data/figure10/figure10_b', '../data/figure10/figure10_d', '../data/figure10/figure10_f']
@@ -49,14 +48,9 @@ for i in range(0,3):
     for j in range(0,6):
         axarr[i].plot(dq_values, scaled_std[j], 'o-', color=tableau10cb[j], markeredgecolor=tableau10cb[j], label=str(dcut_values[j]))
 
-    # title, label
-    if i == 0:
-        axarr[i].set_title('SD,$\, \hat{\sigma}=%.3f$' % data['sigma'])
-    else:
-        axarr[i].set_title('SD,$\, \hat{\sigma}=%.1f$' % data['sigma'])
-    axarr[i].set_ylabel('SD $[\%]$')
 
-# BDF
+
+# CEG
 filenames = ['../data/figure10/figure10_c', '../data/figure10/figure10_e', '../data/figure10/figure10_g']
 axarr = [ax3, ax5, ax7]
 for i in range(0,3):
@@ -70,34 +64,41 @@ for i in range(0,3):
     for j in range(0,6):
         axarr[i].plot(dq_values, scaled_rmse[j], 'o-', color=tableau10cb[j], markeredgecolor=tableau10cb[j], label=str(dcut_values[j]))
 
-    # title, label
+    # sigma
     if i == 0:
-        axarr[i].set_title('RMSE, $\, \hat{\sigma}=%.3f$' % data['sigma'])
+        axarr[i].set_ylabel('$\hat{\sigma}=%.3f$' % data['sigma'])
     else:
-        axarr[i].set_title('RMSE, $\, \hat{\sigma}=%.1f$' % data['sigma'])
-    axarr[i].set_ylabel('RMSE $[\%]$')
+        axarr[i].set_ylabel('$\hat{\sigma}=%.1f$' % data['sigma'])
+    axarr[i].yaxis.set_label_position('right')
 
 panel = ['A', 'B', 'C', 'D', 'E', 'F', 'G']
 i = 0
 for ax in [ax1, ax2, ax3, ax4, ax5, ax6, ax7]:
-    ax.set_xticks(np.arange(0,0.51,0.1))
     # ticks
-    ax.get_xaxis().tick_bottom()    
-    ax.get_yaxis().tick_left()  
+    ax.set_xticks(np.arange(0,0.51,0.1))
+    ax.set_xticklabels(['0', '0.1', '0.2', '0.3', '0.4', '0.5'])
+    ax.tick_params('x', rotation=45)
     # frame lines
     ax.spines['top'].set_visible(False)
     ax.spines['right'].set_visible(False)
 
     # ABC
-    ax.text(-0.15, 1.15, panel[i], transform=ax.transAxes, fontsize=16, fontweight='bold', va='top', ha='right')
+    ax.text(-0.25, 1.2, panel[i], transform=ax.transAxes, fontsize=16, fontweight='bold', va='top', ha='right')
     i += 1
 
+for ax in [ax2, ax3, ax4, ax5]:
+    plt.setp(ax.get_xticklabels(), visible=False)
+
+# titles
+ax2.set_title('SD [\%]')
+ax3.set_title('RMSE [\%]')
+
 ax2.set_yticks(np.arange(0,21,5))
-ax3.set_yticks(np.arange(0,251,50))
+ax3.set_yticks(np.arange(0,251,100))
 ax4.set_yticks(np.arange(0,81,20))
-ax5.set_yticks(np.arange(0,251,50))
-ax6.set_yticks(np.arange(0,301,50))
-ax7.set_yticks(np.arange(0,301,50))
+ax5.set_yticks(np.arange(0,251,100))
+ax6.set_yticks(np.arange(0,301,100))
+ax7.set_yticks(np.arange(0,301,100))
 
 plt.tight_layout()
 plt.savefig('figure10.pdf')
