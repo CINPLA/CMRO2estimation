@@ -32,10 +32,6 @@ for i in range(0,3):
         for k in range(0, len(dcut_values)):
             axarr[i,j].plot(dq_values, estimates[k], 'o-', color=tableau10cb[k], markeredgecolor=tableau10cb[k], label=str(dcut_values[k]))
 
-        # legend
-#        if j == 2:
-#            axarr[i][j].legend()
-
         # titles and labels
         if i == 0:
             axarr[i][j].set_title('$\hat{\sigma}$ = %.3f' % (noise))
@@ -67,9 +63,9 @@ for i in range(0,3):
             axarr[i][j].set_ylim(-4,4)
 
         # ABC
-        axarr[i,j].text(-0.15, 1.1, panel[i,j], transform=axarr[i,j].transAxes, fontsize=22, fontweight='bold', va='top', ha='right')
+        axarr[i,j].text(-0.15, 1.1, panel[i,j], transform=axarr[i,j].transAxes, fontsize=16, fontweight='bold', va='top', ha='right')
 
-axarr[2,1].legend(loc='upper center', bbox_to_anchor=(0.4, -0.2), ncol=3)
+axarr[2,1].legend(loc='upper center', bbox_to_anchor=(0.4, -0.25), ncol=3)
 
 plt.tight_layout()
 plt.savefig('figure11.pdf', bbox_inches='tight')
