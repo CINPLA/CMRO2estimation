@@ -40,7 +40,7 @@ for i in range(0,3):
         if i == 2:
             axarr[i][j].set_xlabel('$\hat{d}\mathrm{_q}$')
         if j == 0:
-            axarr[i][j].set_ylabel('$M_\mathrm{est}$')
+            axarr[i][j].set_ylabel('$\hat{M}_\mathrm{est}$')
 
         # frame lines
         axarr[i][j].spines['top'].set_visible(False)
