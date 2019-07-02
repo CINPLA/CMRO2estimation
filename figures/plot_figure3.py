@@ -7,7 +7,7 @@ from set_style import set_style
 
 set_style('article', w=1, h=2.5)
 
-filename = np.array([['../data/figure4/bias_a', '../data/figure5/std_a', '../data/figure6/rmse_a'], ['../data/figure4/bias_b', '../data/figure5/std_b', '../data/figure6/rmse_b'], ['../data/figure4/bias_c', '../data/figure5/std_c', '../data/figure6/rmse_c'], ['../data/figure4/bias_d', '../data/figure5/std_d', '../data/figure6/rmse_d']])
+filename = np.array([['../data/figure4/bias_d', '../data/figure5/std_d', '../data/figure6/rmse_d'], ['../data/figure4/bias_e', '../data/figure5/std_e', '../data/figure6/rmse_e'], ['../data/figure4/bias_f', '../data/figure5/std_f', '../data/figure6/rmse_f'], ['../data/figure3/bias', '../data/figure3/std', '../data/figure3/rmse']])
 
 panel = np.array([['A', 'B', 'C'], ['D', 'E', 'F'], ['G', 'H', 'I'], ['J', 'K', 'L']])
 
@@ -52,18 +52,18 @@ for i in range(0,4):
     cset1 = axarr[i,j].imshow(Z, extent=[min(x),max(x),min(y),max(y)], origin='lower', cmap=cm.get_cmap(cmap))
     
     if i == 0:
-        cset1.set_clim(1e4,1e6)
-        cbar = fig.colorbar(cset1, ax=axarr[i,j], ticks=[1e4, 1e6], extend='both')
-        cbar.ax.set_yticklabels(['$10^4$', '$10^6$'])
+        cset1.set_clim(1e3,1e5)
+        cbar = fig.colorbar(cset1, ax=axarr[i,j], ticks=[1e3, 1e5], extend='both')
+        cbar.ax.set_yticklabels(['$10^3$', '$10^5$'])
     elif i == 1:
-        cset1.set_clim(400,500)
-        fig.colorbar(cset1, ax=axarr[i,j], ticks=np.arange(400, 500.1, 25), extend='both')
+        cset1.set_clim(20,50)
+        fig.colorbar(cset1, ax=axarr[i,j], ticks=np.arange(20, 50.1, 10), extend='both')
     elif i == 2:
-        cset1.set_clim(10,20)
-        fig.colorbar(cset1, ax=axarr[i,j], extend='both')
+        cset1.set_clim(2,5)
+        fig.colorbar(cset1, ax=axarr[i,j], ticks=np.arange(2, 5.1, 1), extend='both')
     elif i == 3: 
-        cset1.set_clim(4,8)
-        fig.colorbar(cset1, ax=axarr[i,j], ticks=np.arange(4, 8.1, 1), extend='both')
+        cset1.set_clim(0,2)
+        fig.colorbar(cset1, ax=axarr[i,j], ticks=np.arange(0, 2.1, 0.5), extend='max')
     
 # RMSE 
 for i in range(0,4):
@@ -79,16 +79,10 @@ for i in range(0,4):
     cset1 = axarr[i,j].imshow(Z, extent=[min(x),max(x),min(y),max(y)], origin='lower', cmap=cm.get_cmap(cmap))
 
     if i == 0:
-        cset1.set_clim(1e4,1e6)
-        cbar = fig.colorbar(cset1, ax=axarr[i,j], ticks=[1e4, 1e6], extend='both')
-        cbar.ax.set_yticklabels(['$10^4$', '$10^6$'])
-    elif i == 1:
-        cset1.set_clim(0, 500)
-        fig.colorbar(cset1, ax=axarr[i,j], ticks=np.arange(0, 500.1, 125), extend='max')
-    elif i == 2:
-        cset1.set_clim(0, 100)
-        fig.colorbar(cset1, ax=axarr[i,j], ticks=np.arange(0, 100.1, 25), extend='max')
-    elif i == 3: 
+        cset1.set_clim(1e3,1e5)
+        cbar = fig.colorbar(cset1, ax=axarr[i,j], ticks=[1e3, 1e5], extend='both')
+        cbar.ax.set_yticklabels(['$10^3$', '$10^5$'])
+    else:
         cset1.set_clim(0, 100)
         fig.colorbar(cset1, ax=axarr[i,j], ticks=np.arange(0, 100.1, 25), extend='max')
     
