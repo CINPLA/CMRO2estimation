@@ -100,8 +100,8 @@ for i in range(1,4):
         cset.set_clim(-0.05,2.05)
     elif i == 2:
         cset = axarr[i][1].imshow(Z, extent=[0, max(x), 0, max(y)], origin='lower', cmap=cm.get_cmap(cmap))
-        cb = plt.colorbar(cset, ax=axarr[i][1], extend='both', ticks=np.arange(-1000,1001,500))
-        cset.set_clim(-1000,1000)
+        cb = plt.colorbar(cset, ax=axarr[i][1], extend='both', ticks=np.arange(-100,101,50))
+        cset.set_clim(-100,100)
     # axes
     axarr[i][1].set(yticks=np.arange(max(x)/2-1, max(x)/2+1.01, 0.5))
     # remove tick labels 
