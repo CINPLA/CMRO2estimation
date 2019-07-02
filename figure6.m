@@ -4,7 +4,7 @@ clear all
 close all
 addpath('functions')
 
-letters = 'abcdefghijklmnop';
+letters = 'abcdefghi';
 
 for letter = letters
     rmse(['data/figure4/bias_', letter], ...

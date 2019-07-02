@@ -2,9 +2,9 @@ clear all
 close all
 addpath('functions')
 
-d_values = [0.007, 0.014, 0.035, 0.07];
-dq_values = [0.0, 0.03, 0.09, 0.14];
-letters = 'abcdefghijklmnop';
+d_values = [0.0035, 0.007, 0.014];
+dq_values = [0.0, 0.02, 0.04];
+letters = 'abcdefghi';
 d_est = 0.001;
 
 k = 1;
