@@ -144,5 +144,6 @@ for i in range(0,4):
         else:
             axarr[i][j].text(-0.2, 1.3, panel[i,j], transform=axarr[i][j].transAxes, fontsize=16, fontweight='bold', va='top', ha='right')
 
-plt.tight_layout()
+plt.tight_layout(pad=0.3, w_pad=0.5, h_pad=0.5)
+#gs.tight_layout(fig)
 plt.savefig('figure2.pdf', dpi=300)
