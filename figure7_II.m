@@ -2,9 +2,9 @@ clear all
 close all
 addpath('functions')
 
-sigma = 0.013;
+sigma = 0.0005;
 d_est = 0.001;
-d_q = 0.09;
+d_q = 0.04;
 seed = 1;
 
 load('data/figure7/groundTruth_varyingM.mat')
