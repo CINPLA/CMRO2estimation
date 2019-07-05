@@ -30,7 +30,7 @@ cmap = cm.Reds
 cset = ax1.plot_surface(X, Y, Z, cmap=cm.get_cmap(cmap), linewidth=0, rstride=10, cstride=10)
 plt.colorbar(cset, ax=ax1, ticks=np.arange(1,4.1,1))
 cset.set_clim(1,4.25)
-ax1.set_title('$\hat{P}+\hat{P}_{\sigma}$', y=1.05)
+ax1.set_title('$\hat{P}$', y=1.05)
 ax1.view_init(50,190+45)
 ## make the panes transparent
 ax1.xaxis.set_pane_color((1.0, 1.0, 1.0, 0.0))
