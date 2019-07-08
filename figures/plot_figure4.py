@@ -13,7 +13,7 @@ set_style('article', w=1, h=2)
 
 filename = np.array([['../data/figure4/bias_a', '../data/figure4/bias_b', '../data/figure4/bias_c'], ['../data/figure4/bias_d', '../data/figure4/bias_e', '../data/figure4/bias_f'], ['../data/figure4/bias_g', '../data/figure4/bias_h', '../data/figure4/bias_i']])
 
-panel = np.array([['A', 'B', 'C'], ['D', 'E', 'F'], ['G', 'H', 'I'])
+panel = np.array([['A', 'B', 'C'], ['D', 'E', 'F'], ['G', 'H', 'I']])
 
 fig, axarr = plt.subplots(3,3)
 plt.draw()
