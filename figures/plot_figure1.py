@@ -10,9 +10,15 @@ import matplotlib.pyplot as plt
 import numpy as np
 from matplotlib import cm
 import matplotlib.gridspec as gridspec
+import matplotlib.ticker as mticker
 from set_style import set_style
 
 set_style('article', w=1, h=3)
+
+# scientific notation
+f = mticker.ScalarFormatter(useOffset=False, useMathText=True)
+g = lambda x,pos : "${}$".format(f._formatSciNotation('%1.10e' % x))
+fmt = mticker.FuncFormatter(g)
 
 fig = plt.figure()
 gs = gridspec.GridSpec(3, 4)
@@ -26,12 +32,13 @@ tableau10cb = np.array([(0,107,164), (255,128,14), (171,171,171), (89,89,89), (9
 
 ## A ##
 filenames = ['../data/figure1/delta_vs_r__dfixed__1', '../data/figure1/delta_vs_r__dfixed__2', '../data/figure1/delta_vs_r__dfixed__3', '../data/figure1/delta_vs_r__dfixed__4']
+#labels = ['$10^{-8}$', '$10^{-7}$', '$10^{-6}$', '$10^{-5}$']
 for i in range(0,4):
     data = sio.loadmat(filenames[i])
     delta_smooth = data['delta_smooth_vector']
     r =  data['r']
     q =  data['q'][0][0]
-    ax1.plot(r, delta_smooth, '-o', color=tableau10cb[i], markeredgecolor=tableau10cb[i], label=str(q))
+    ax1.plot(r, delta_smooth, '-o', color=tableau10cb[i], markeredgecolor=tableau10cb[i], label="{}".format(fmt(q)))
 leg = ax1.legend(frameon=0, fontsize='x-small')
 leg.set_title('q', prop={'size':'small'})
 # axes
@@ -110,9 +117,10 @@ for i in range(0,2):
     q = data['q'][0][0]
     delta_smooth = data['delta_smooth_vector']
     if i == 0:
-        ax5.plot(r, delta_smooth, '-', color=tableau10cb[i], markeredgecolor=tableau10cb[i], label='$q$ = %.2e,\n$\hat{d}$ = %.0e' % (q,d))
+        ax5.plot(r, delta_smooth, '-', color=tableau10cb[i], markeredgecolor=tableau10cb[i], label='$q$ = {}\n'.format(fmt(q))+'$\hat{d}$'+' = {}'.format(fmt(d)))
     elif i == 1:
-        ax5.plot(r, delta_smooth, 'o', color=tableau10cb[i], markeredgecolor=tableau10cb[i], label='$q$ = %.2e,\n $\hat{d}$ = %.0e' % (q,d))
+        ax5.plot(r, delta_smooth, 'o', color=tableau10cb[i], markeredgecolor=tableau10cb[i], label='$q$ = {}\n'.format(fmt(q))+'$\hat{d}$'+' = {}'.format(fmt(d)))
+        #ax5.plot(r, delta_smooth, 'o', color=tableau10cb[i], markeredgecolor=tableau10cb[i], label='$q$ = %.2e,\n $\hat{d}$ = %.0e' % (q,d))
 ax5.legend(frameon=0, fontsize='x-small')
 # axes
 ax5.set_xlim(0, 0.2)
@@ -122,7 +130,7 @@ ax5.set_yticks([0,1])
 ax5.axvline(x=5.6e-2, ymax=0.525, color='k', ls=':')
 ax5.axhline(y=0.5, xmax=0.28, color='k', ls=':')
 # title and labels
-ax5.set_title('Smoothed $\delta$-function')
+ax5.set_title('$\delta\mathrm{_{smooth}}$')
 ax5.set_xlabel('$\hat{r}$')
 ax5.set_ylabel('$\delta\mathrm{_{smooth}}$')
 
