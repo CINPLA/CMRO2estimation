@@ -10,7 +10,7 @@ command in the terminal:
 python3 setup.py install
 ```
 
-Figures 7 and 8 require [fenics](https://fenics.readthedocs.io/en/latest/installation.html#debian-ubuntu-packages). Other requirements are given in 'requirements.txt' and can be installed by the following command:
+Figures 7 and 8 require [FEniCS](https://fenics.readthedocs.io/en/latest/installation.html#debian-ubuntu-packages). Other requirements are given in `requirements.txt` and can be installed by the following command:
 ```bash
 pip install -r requirements.txt
 ```
