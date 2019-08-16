@@ -20,4 +20,5 @@ The code was run with Ubuntu 18.04.3 and Matlab R2017b.
 ## Reproducing the results of the paper
 
 All data can be downloaded from the data folder or be reproduced by running the code in
-the home folder. To plot and save the figures, run the code in the figure folder. 
+the home folder. To plot and save the figures, run the code in the figure folder. Note that
+some of the figures have been edited in Inkscape for publication purposes.
