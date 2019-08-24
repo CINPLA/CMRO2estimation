@@ -1,4 +1,4 @@
-# CMRO2_code
+# Spatially Resolved Estimation of Metabolic Oxygen Consumption From Optical Measurements in Cortex
 
 This code was used to produce the results presented in Sætra et al. 20XX: [paper]
 
