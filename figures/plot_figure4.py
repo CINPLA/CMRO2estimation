@@ -1,5 +1,4 @@
-# This code creates Figure 4.
-# To be able to run this code you must download the data folder
+# To run this code you must download the data folder
 # or run figure4.m.
 
 import scipy.io as sio

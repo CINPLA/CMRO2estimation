@@ -1,5 +1,4 @@
-# This code creates Figure 8.
-# To be able to run this code you must download the data folder or
+# To run this code you must download the data folder or
 # first run figure8_I.py and figure8_II.m.
 
 import scipy.io as sio

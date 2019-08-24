@@ -1,9 +1,8 @@
-# This code creates Figure 1.
-# To be able to run this code, you must download the data folder or first run
+# To run this code, you must download the data folder or first run
 # figure1a.m
 # figure1c.m and
 # figure1e.m
-# (The numbers that are used in panel B and D are extracted manually from A and C.)
+# (The numbers that are used in panel B and D has been extracted manually from A and C.)
 
 import scipy.io as sio
 import matplotlib.pyplot as plt
@@ -32,7 +31,6 @@ tableau10cb = np.array([(0,107,164), (255,128,14), (171,171,171), (89,89,89), (9
 
 ## A ##
 filenames = ['../data/figure1/delta_vs_r__dfixed__1', '../data/figure1/delta_vs_r__dfixed__2', '../data/figure1/delta_vs_r__dfixed__3', '../data/figure1/delta_vs_r__dfixed__4']
-#labels = ['$10^{-8}$', '$10^{-7}$', '$10^{-6}$', '$10^{-5}$']
 for i in range(0,4):
     data = sio.loadmat(filenames[i])
     delta_smooth = data['delta_smooth_vector']
@@ -120,7 +118,6 @@ for i in range(0,2):
         ax5.plot(r, delta_smooth, '-', color=tableau10cb[i], markeredgecolor=tableau10cb[i], label='$q$ = {}\n'.format(fmt(q))+'$\hat{d}$'+' = {}'.format(fmt(d)))
     elif i == 1:
         ax5.plot(r, delta_smooth, 'o', color=tableau10cb[i], markeredgecolor=tableau10cb[i], label='$q$ = {}\n'.format(fmt(q))+'$\hat{d}$'+' = {}'.format(fmt(d)))
-        #ax5.plot(r, delta_smooth, 'o', color=tableau10cb[i], markeredgecolor=tableau10cb[i], label='$q$ = %.2e,\n $\hat{d}$ = %.0e' % (q,d))
 ax5.legend(frameon=0, fontsize='x-small')
 # axes
 ax5.set_xlim(0, 0.2)

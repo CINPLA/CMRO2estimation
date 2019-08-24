@@ -1,5 +1,4 @@
-# This code creates Figure 2.
-# To be able to run this code, you must download the data folder 
+# To to run this code, you must download the data folder 
 # or first run figure2.m.
 
 import scipy.io as sio
@@ -41,7 +40,6 @@ for i in range(0,2):
         axarr[0][i].set_title('$P(r)$')
     else:
         axarr[0][i].set_title('$P(r)+P_{\sigma}(r)$')
-#ax2.set_xlabel('$r$')
 plt.setp(ax1.get_xticklabels(), visible=False)
 
 # Figure C, E, G
@@ -145,5 +143,4 @@ for i in range(0,4):
             axarr[i][j].text(-0.2, 1.3, panel[i,j], transform=axarr[i][j].transAxes, fontsize=16, fontweight='bold', va='top', ha='right')
 
 plt.tight_layout(pad=0.3, w_pad=0.5, h_pad=0.5)
-#gs.tight_layout(fig)
 plt.savefig('figure2.pdf', dpi=300)

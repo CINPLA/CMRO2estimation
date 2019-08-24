@@ -1,3 +1,6 @@
+# To to run this code, you must download the data folder 
+# or first run figure3.m.
+
 import scipy.io as sio
 import matplotlib.pyplot as plt
 import numpy as np

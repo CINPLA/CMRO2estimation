@@ -1,6 +1,5 @@
-# This code creates Figure 10. 
-# To be able to tun this code you must download the data folder
-# or run figure10.m.
+# To run this code you must download the data folder
+# or run figure9.m.
 
 import scipy.io as sio
 import matplotlib.pyplot as plt

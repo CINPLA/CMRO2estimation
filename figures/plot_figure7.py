@@ -1,5 +1,4 @@
-# This code creates Figure 7.
-# To be able to run this code you must download the data folder or
+# To run this code you must download the data folder or
 # first run figure7_I.py and figure7_II.m.
 
 import scipy.io as sio
@@ -88,8 +87,6 @@ for ax in [ax2, ax3, ax4]:
     ax.get_yaxis().tick_left()    
     ax.set_xlabel('$\hat{x}$')
     ax.set_ylabel('$\hat{y}$', rotation=0, va='center')
-    #ax.xaxis.set_rotate_label(False)
-    #ax.yaxis.set_rotate_label(False)
 
 # ABC
 ax3.text(-0.15, 2.78, 'A', transform=ax3.transAxes, fontsize=16, fontweight='bold', va='top', ha='right')
