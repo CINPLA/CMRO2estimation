@@ -2,9 +2,9 @@ function [] = generatedata_figure2_1D(d_data, sigma, seed, filename)
 % Creates a 1D pO2 dataset and writes to file.
 % 
 % Arguments:
-%   d_data (um): spatial spacing
-%   sigma (mmHg): used to generate noisy data with normrnd(P, noise)
-%   seed
+%   d_data (float): spatial spacing
+%   sigma (float): used to generate noisy data with normrnd(P, noise)
+%   seed (int)
 %   filename (str): name of output file   
 
 

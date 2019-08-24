@@ -3,11 +3,11 @@ function [] = generatedata_figure2_2D_smoothing(d_data, d_est, d_q, sigma, seed,
 % calculates its Laplacian, and writes to file.
 % 
 % Arguments:
-%   d_data: spatial spacing of model data
-%   d_est: spatial spacing of estimated data
-%   d_q: smoothing length
-%   sigma: used to generate noisy data with normrnd(P, noise)
-%   seed
+%   d_data (float): grid spacing of input data
+%   d_est (float): grid spacing of output data
+%   d_q (float): smoothing length
+%   sigma (float): used to generate noisy data with normrnd(P, noise)
+%   seed (int)
 %   filename (str): name of output file   
 
 [P, ~, H_data] = analytical_poisson(d_data);

@@ -1,12 +1,20 @@
 function [P, r, H] = analytical_poisson( d_data )
-% P = P_ves if r < Rves
-% P = P_ves + 0.25 * M * (r^2 - R_ves^2) - 0.5 * M * R_t^2 * ln(r / R_ves)
-% if r >= R_ves
+% This function creates, based on the Krogh-Erlang equation, 
+% a grid of pO2 values around a vessel centered in the midle of the grid.
 %
-% All parameters are dimensionless.
+% Arguments:
+%   d_data (float): grid spacing
+%
+% Returns:
+%   P (2D array): pO2 values
+%   r (2D array): distances to the vessel center
+%   H (1D array): x (and y) positions
+%
+% All input and output arguments are dimensionless.
 
-r_star = 141.; % [um]
-M_star = 1.e-3; %[mmHg um^-2]
+
+r_star = 141.;    % [um]
+M_star = 1.e-3;   % [mmHg um^-2]
 r_ves = 6/r_star;
 r_t = 200/r_star;
 p_ves = 80/(M_star*r_star^2);

@@ -1,3 +1,5 @@
+% To run this code, you must first run figure7_I.py in Python.
+
 clear all
 close all
 addpath('functions')

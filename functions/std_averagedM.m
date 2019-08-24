@@ -1,11 +1,11 @@
 function [] = std_averageM(d_data, d_est, sigma, N, filename)
 % Standard deviation of spatially averaged M (as a function of d_q 
-% for different values of d_cut). Equation 15
+% for different values of d_cut) calculated from Equation 15.
 %
 % Arguments:
-%   d_data: spatial spacing of model data
-%   d_est: spatial spacing of estimated data
-%   sigma: used to generate noisy data with normrnd(P, noise)
+%   d_data (float): grid spacing of input data
+%   d_est (float): grid spacing of output data
+%   sigma (float): used to generate noisy data with normrnd(P, noise)
 %   N (int): number of trials
 %   filename (str): name of output file   
 

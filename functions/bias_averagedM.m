@@ -1,11 +1,11 @@
 function [] = bias_averageM(d_data, d_est, filename)
 % Bias of spatially averaged M (as a function of d_q 
-% for different values of d_cut). Equation 14
+% for different values of d_cut) calculated from Equation 14.
 %
-% Arguments:
-%   d_data: spatial spacing of model data
-%   d_est: spatial spacing of estimated data
-%   filename (str): name of output file   
+% Arguments: 
+%   d_data (float): grid spacing of input data
+%   d_est (float): grid spacing of output data
+%   filename (str): name of output file 
 
 dq_values = [0:0.01:0.2];
 dcut_values = [0.1, 0.2, 0.3, 0.4, 0.5];

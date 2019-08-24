@@ -1,5 +1,5 @@
 function [] = rmse_averageM(filename_bias, filename_std, filename_rmse)
-% Root mean squre error Equation 16
+% Root mean squre error calculated from Equation 16.
 %
 % Arguments:
 %   filename_bias (str): created by running figure10.m

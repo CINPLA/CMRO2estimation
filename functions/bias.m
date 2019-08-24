@@ -1,10 +1,10 @@
 function [ ] = bias(d_data, d_est, d_q, filename)
-% Bias Equation 14
+% Bias calculated from Equation 14.
 %
 % Arguments:
-%   d_data: spatial spacing of model data
-%   d_est: spatial spacing of estimated data
-%   d_q: smoothing length
+%   d_data (float): grid spacing of input data
+%   d_est (float): grid spacing of output data
+%   d_q (float): smoothing length
 %   filename (str): name of output file   
 
 q = calculate_q(d_data, d_q);

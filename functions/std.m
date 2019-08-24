@@ -1,11 +1,11 @@
 function [ ] = std(d_data, d_est, d_q, sigma, N, filename)
-% Standard deviation Equation 15
+% Standard deviation calculated from Equation 15.
 %
 % Arguments:
-%   d_data: spatial spacing of model data
-%   d_est: spatial spacing of estimated data
-%   d_q: smoothing length
-%   sigma: used to generate noisy data with normrnd(P, noise)
+%   d_data (float): spatial spacing of input data
+%   d_est (float): spatial spacing of output data
+%   d_q (float): smoothing length
+%   sigma (float): used to generate noisy data with normrnd(P, noise)
 %   N (int): number of trials
 %   filename (str): name of output file   
 
