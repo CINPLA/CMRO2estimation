@@ -20,10 +20,10 @@ M = Expression("2-1.5*(x[1]<1)", degree=4)
 p_solution, mesh = solvePoisson_rectangle(corners, vessel_coor, r_ves, p_ves, M, resolution)
 mesh_coor =  mesh.coordinates()
 
-meshfig = plot(mesh)
-plt.show()
-fig = plot(p_solution, title="Ground truth pO2 values")
-plt.show()
+#meshfig = plot(mesh)
+#plt.show()
+#fig = plot(p_solution, title="Ground truth pO2 values")
+#plt.show()
 
 d = 0.007
 filename = 'data/figure7/groundTruth_varyingM'
@@ -32,7 +32,7 @@ y = np.arange(0, 2.0001, d)
 
 p_grid, r1 = fenics2nparray(p_solution, p_ves, r_ves, x, y, vessel_coor)
 
-plt.imshow(p_grid)
-plt.show()
+#plt.imshow(p_grid)
+#plt.show()
 
 sio.savemat(filename, {'P':p_grid, 'r':r1, 'd_data':d, 'M_star':M_star, 'Hx_data':x, 'Hy_data':y, 'res':resolution})
