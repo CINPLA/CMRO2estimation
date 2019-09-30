@@ -18,5 +18,5 @@ for d_data = d_values
     end
 end
 
-load chirp
-sound(y,Fs)
+%load chirp
+%sound(y,Fs)

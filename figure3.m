@@ -12,5 +12,5 @@ bias(d_data, d_est, d_q, 'data/figure3/bias.mat')
 std(d_data, d_est, d_q, sigma, N, 'data/figure3/std.mat')
 rmse('data/figure3/bias', 'data/figure3/std', 'data/figure3/rmse')
         
-load chirp
-sound(y,Fs)
+%load chirp
+%sound(y,Fs)
