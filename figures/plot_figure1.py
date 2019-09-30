@@ -2,7 +2,7 @@
 # figure1a.m
 # figure1c.m and
 # figure1e.m
-# (The numbers that are used in panel B and D has been extracted manually from A and C.)
+# (The numbers that are used in panel B and D have been extracted manually from A and C.)
 
 import scipy.io as sio
 import matplotlib.pyplot as plt
