@@ -49,15 +49,15 @@ def fenics2nparray(data, boundary_value, r_hole, x, y, hole_coor):
                 if r0[i,j] < r_hole:
                     data_val = boundary_value[0]
                     data_grid[i,j] = boundary_value[0]
-                    print("Point found within hole. Value set to", boundary_value[0])
+                    #print("Point found within hole. Value set to", boundary_value[0])
                 elif r1[i,j] < r_hole:
                     data_val = boundary_value[1]
                     data_grid[i,j] = boundary_value[1]
-                    print("Point found within hole. Value set to", boundary_value[1])
+                    #print("Point found within hole. Value set to", boundary_value[1])
                 elif r2[i,j] < r_hole:
                     data_val = boundary_value[2]
                     data_grid[i,j] = boundary_value[2]
-                    print("Point found within hole. Value set to", boundary_value[2])
+                    #print("Point found within hole. Value set to", boundary_value[2])
 
     if len(hole_coor) == 1:
         return data_grid, r0
