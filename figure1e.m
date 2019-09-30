@@ -2,8 +2,8 @@ clear all
 close all
 addpath('functions')
 
-figure(1)
-hold on
+%figure(1)
+%hold on
 
 q = 5e-4;
 d = 0.005;
