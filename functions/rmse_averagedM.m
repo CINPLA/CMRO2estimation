@@ -1,4 +1,4 @@
-function [] = rmse_averageM(filename_bias, filename_std, filename_rmse)
+function [] = rmse_averagedM(filename_bias, filename_std, filename_rmse)
 % Root mean squre error calculated from Equation 16.
 %
 % Arguments:
