@@ -1,4 +1,4 @@
-function [] = std_averageM(d_data, d_est, sigma, N, filename)
+function [] = std_averagedM(d_data, d_est, sigma, N, filename)
 % Standard deviation of spatially averaged M (as a function of d_q 
 % for different values of d_cut) calculated from Equation 15.
 %
@@ -32,13 +32,16 @@ for i = 1:M
     d_q = dq_values(i);   
     q = calculate_q(d_data, d_q);
     p = 1-q;
-    estimate1_s = zeros(1,N);       
+    estimate1_s = zeros(1,N);   
+    estimate2_s = zeros(1,N);
+    estimate3_s = zeros(1,N);
+    estimate4_s = zeros(1,N);
+    estimate5_s = zeros(1,N);
     for s = 1:N
         rng(s);
         P_noisy = normrnd(P, sigma);          
         P_smooth = csaps({H_data, H_data}, P_noisy, p, {H_est, H_est});       
-        del2P = 4*del2(P_smooth, d_est);                 
-        
+        del2P = 4*del2(P_smooth, d_est);                      
         estimate1_s(s) = mean(del2P(r_est > dcut_values(1)));
         estimate2_s(s) = mean(del2P(r_est > dcut_values(2)));
         estimate3_s(s) = mean(del2P(r_est > dcut_values(3)));
