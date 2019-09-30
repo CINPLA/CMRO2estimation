@@ -1,4 +1,4 @@
-function [] = bias_averageM(d_data, d_est, filename)
+function [] = bias_averagedM(d_data, d_est, filename)
 % Bias of spatially averaged M (as a function of d_q 
 % for different values of d_cut) calculated from Equation 14.
 %
