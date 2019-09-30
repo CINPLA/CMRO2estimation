@@ -20,10 +20,10 @@ M = Constant(1)
 p_solution, mesh = solvePoisson_rectangle(corners, vessel_coor, r_ves, p_ves, M, resolution)
 mesh_coor =  mesh.coordinates()
 
-meshfig = plot(mesh)
-plt.show()
-fig = plot(p_solution, title="Ground truth pO2 values")
-plt.show()
+#meshfig = plot(mesh)
+#plt.show()
+#fig = plot(p_solution, title="Ground truth pO2 values")
+#plt.show()
 
 d = 0.007
 filename = 'data/figure8/groundTruth_twoVessel'
@@ -32,8 +32,8 @@ y = np.arange(0, 3.0001, d)
 
 p_grid, r1, r2, r3 = fenics2nparray(p_solution, p_ves, r_ves, x, y, vessel_coor)
 
-plt.imshow(p_grid)
-plt.show()
+#plt.imshow(p_grid)
+#plt.show()
 
 sio.savemat(filename, {'P':p_grid, 'r1':r1, 'r2':r2, 'r3':r3, 'd_data':d, 'M_star':M_star, 'Hx_data':x, 'Hy_data':y, 'res':resolution})
 
