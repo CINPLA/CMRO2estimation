@@ -5,8 +5,8 @@ addpath('functions')
 q = 1e-3;
 d_values = [0.001, 0.005, 0.01, 0.05, 0.1];
 
-figure(2)
-hold on
+%figure(2)
+%hold on
 i = 1;
 for d = d_values   
     [delta_smooth_vector, r] = delta_smooth(d, q);   
