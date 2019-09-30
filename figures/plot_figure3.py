@@ -1,4 +1,4 @@
-# To to run this code, you must download the data folder 
+# To run this code, you must download the data folder 
 # or first run figure3.m.
 
 import scipy.io as sio
