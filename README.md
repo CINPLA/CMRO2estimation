@@ -21,6 +21,6 @@ The code was run with Ubuntu 18.04.3 and Matlab R2017b.
 
 ## Reproducing the results of the paper
 
-All data can be downloaded from the data folder or be reproduced by running the the script `run_all.sh`. This might run for a few days on a normal computer.
+All data can be downloaded from the data folder or be reproduced by running the script `run_all.sh`. This might run for a few days on a normal computer.
 To plot and save the figures, run `plot_all.sh` in the figure folder.
 Note that some of the figures have been edited in Inkscape for publication purposes.
