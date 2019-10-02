@@ -2,15 +2,17 @@
 
 This code was used to produce the results presented in Sætra et al. 20XX: [paper]
 
-## Installation
+## Requirements 
 
-Clone or download the repo, navigate to the top directory of the repo and enter the following
+If you want to reproduce Figures 7 and 8, navigate to the top directory of the repo and enter the following
 command in the terminal: 
 ```bash
 python3 setup.py install
 ```
 
-Figures 7 and 8 require [FEniCS](https://fenics.readthedocs.io/en/latest/installation.html#debian-ubuntu-packages). Other requirements are given in `requirements.txt` and can be installed by the following command:
+Figures 7 and 8 also require [FEniCS](https://fenics.readthedocs.io/en/latest/installation.html#debian-ubuntu-packages).
+
+Other requirements are given in `requirements.txt` and can be installed by the following command:
 ```bash
 pip install -r requirements.txt
 ```
