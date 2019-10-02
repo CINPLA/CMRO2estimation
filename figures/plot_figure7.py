@@ -24,7 +24,6 @@ x = data['Hx_data'][0]
 y = data['Hy_data'][0]
 X, Y = np.meshgrid(x,y)
 Z = data['P']
-print Z.max()
 cmap = cm.Reds
 cset = ax1.plot_surface(X, Y, Z, cmap=cm.get_cmap(cmap), linewidth=0, rstride=10, cstride=10)
 plt.colorbar(cset, ax=ax1, ticks=np.arange(1,4.1,1))
