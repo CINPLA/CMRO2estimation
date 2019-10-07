@@ -1,5 +1,5 @@
 from fenics import *
-from functions.poisson_rectangle import solvePoisson_rectangle
+from functions.poisson_rectangle import solve_poisson_rectangle
 import numpy as np
 import scipy.io as sio
 from functions.fenics2nparray import fenics2nparray
@@ -17,7 +17,7 @@ r_ves = 6/R_star
 p_ves = [80/(M_star*R_star**2)]
 M = Expression("2-1.5*(x[1]<1)", degree=4)
          
-p_solution, mesh = solvePoisson_rectangle(corners, vessel_coor, r_ves, p_ves, M, resolution)
+p_solution, mesh = solve_poisson_rectangle(corners, vessel_coor, r_ves, p_ves, M, resolution)
 mesh_coor =  mesh.coordinates()
 
 #meshfig = plot(mesh)

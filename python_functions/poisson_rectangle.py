@@ -5,7 +5,7 @@ import scipy.io as sio
 from functions.fenics2nparray import *
 import matplotlib.pyplot as plt
 
-def solvePoisson_rectangle(corners, hole_coor, r_hole, hole_boundary_value, M, resolution):
+def solve_poisson_rectangle(corners, hole_coor, r_hole, hole_boundary_value, M, resolution):
     """
     Solves the Poissons equtaion
     nabla**2 p = M
