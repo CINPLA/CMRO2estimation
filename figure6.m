@@ -2,7 +2,7 @@
 
 clear all
 close all
-addpath('functions')
+addpath('matlab_functions')
 
 letters = 'abcdefghi';
 

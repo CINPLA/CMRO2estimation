@@ -4,7 +4,7 @@
 
 clear all
 close all
-addpath('functions')
+addpath('matlab_functions')
 
 d_data = 0.007;
 d_q = 0.08;

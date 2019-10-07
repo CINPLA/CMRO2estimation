@@ -1,6 +1,6 @@
 clear all
 close all
-addpath('functions')
+addpath('matlab_functions')
 
 % A
 d_data = 1;

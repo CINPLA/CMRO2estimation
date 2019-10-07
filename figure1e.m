@@ -1,6 +1,6 @@
 clear all
 close all
-addpath('functions')
+addpath('matlab_functions')
 
 %figure(1)
 %hold on

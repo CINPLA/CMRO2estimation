@@ -1,6 +1,6 @@
 clear all
 close all
-addpath('functions')
+addpath('matlab_functions')
 
 d_values = [0.0035, 0.007, 0.014];
 dq_values = [0.0, 0.02, 0.04];

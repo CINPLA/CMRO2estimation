@@ -1,6 +1,6 @@
 clear all
 close all
-addpath('functions')
+addpath('matlab_functions')
 
 d_data = 0.035;
 d_est = 0.001;

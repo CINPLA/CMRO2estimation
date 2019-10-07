@@ -1,6 +1,6 @@
 clear all
 close all
-addpath('functions')
+addpath('matlab_functions')
 
 q = 1e-3;
 d_values = [0.001, 0.005, 0.01, 0.05, 0.1];

@@ -2,7 +2,7 @@
 
 clear all
 close all
-addpath('functions')
+addpath('matlab_functions')
 
 sigma = 0.0005;
 d_est = 0.001;
