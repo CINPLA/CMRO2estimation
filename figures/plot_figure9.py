@@ -145,5 +145,5 @@ ax4.set_ylim(0, 100)
 ax6.set_ylim(0, 60)
 ax7.set_ylim(0, 100)
 
-plt.savefig('figure9.pdf')
+plt.savefig('figures_pdf/figure9.pdf')
 # Note that the figure has been edited in Inkscape for publication purposes.

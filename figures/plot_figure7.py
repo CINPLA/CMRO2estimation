@@ -94,4 +94,4 @@ ax3.text(-0.15, 1.1, 'C', transform=ax3.transAxes, fontsize=16, fontweight='bold
 ax4.text(-0.15, 1.1, 'D', transform=ax4.transAxes, fontsize=16, fontweight='bold', va='top', ha='right')
 
 plt.tight_layout()
-plt.savefig('figure7.pdf', dpi=300)
+plt.savefig('figures_pdf/figure7.pdf', dpi=300)

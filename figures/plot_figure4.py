@@ -96,4 +96,4 @@ for ax in [ax_cbar1, ax_cbar2]:
     cbar.ax.set_xticklabels([-100, -50, 0, 50, 100], rotation=45)
     cbar.ax.tick_params(direction='in')
 
-plt.savefig('figure4.pdf', dpi=300)
+plt.savefig('figures_pdf/figure4.pdf', dpi=300)

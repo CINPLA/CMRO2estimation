@@ -97,4 +97,4 @@ for i in range(0,3):
         axarr[0,i].set_xlabel('$\hat{d}\mathrm{_q}=%.2f$' % a['d_q'])
     axarr[0,i].xaxis.set_label_position('top')
 
-plt.savefig('figure5.pdf', dpi=300)
+plt.savefig('figures_pdf/figure5.pdf', dpi=300)

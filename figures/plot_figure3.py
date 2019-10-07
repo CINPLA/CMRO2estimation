@@ -121,6 +121,4 @@ axarr[0,1].set_title('SD $[\%]$')
 axarr[0,2].set_title('RMSE $[\%]$')
 
 plt.tight_layout()
-plt.savefig('figure3.pdf', dpi=300)
-
-
+plt.savefig('figures_pdf/figure3.pdf', dpi=300)
