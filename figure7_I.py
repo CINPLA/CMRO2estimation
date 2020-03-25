@@ -1,8 +1,8 @@
 from fenics import *
-from functions.poisson_rectangle import solve_poisson_rectangle
+from python_functions.poisson_rectangle import solve_poisson_rectangle
 import numpy as np
 import scipy.io as sio
-from functions.fenics2nparray import fenics2nparray
+from python_functions.fenics2nparray import fenics2nparray
 import matplotlib.pyplot as plt
 
 resolution = 900

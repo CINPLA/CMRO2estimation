@@ -2,7 +2,7 @@ from fenics import *
 from mshr import *
 import numpy as np
 import scipy.io as sio
-from functions.fenics2nparray import *
+from python_functions.fenics2nparray import *
 import matplotlib.pyplot as plt
 
 def solve_poisson_rectangle(corners, hole_coor, r_hole, hole_boundary_value, M, resolution):

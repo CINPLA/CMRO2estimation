@@ -143,4 +143,5 @@ for i in range(0,4):
             axarr[i][j].text(-0.2, 1.3, panel[i,j], transform=axarr[i][j].transAxes, fontsize=16, fontweight='bold', va='top', ha='right')
 
 plt.tight_layout(pad=0.3, w_pad=0.5, h_pad=0.5)
-plt.savefig('figures_pdf/figure2.pdf', dpi=300)
+#plt.savefig('figures_pdf/figure2.pdf', dpi=300)
+plt.savefig('figures_pdf/figure2.jpeg', dpi=300)

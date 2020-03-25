@@ -147,4 +147,5 @@ for ax in [ax1, ax2, ax3, ax4, ax5]:
     i += 1
 
 plt.tight_layout()
-plt.savefig('figures_pdf/figure1.pdf', dpi=300)
+#plt.savefig('figures_pdf/figure1.pdf', dpi=300)
+plt.savefig('figures_pdf/figure1.jpeg', dpi=300)

@@ -72,4 +72,5 @@ ax1.text(-0.05, 1.1, 'A', transform=ax1.transAxes, fontsize=16, fontweight='bold
 ax2.text(-0.05, 1.1, 'B', transform=ax2.transAxes, fontsize=16, fontweight='bold', va='top', ha='right')
 
 plt.tight_layout()
-plt.savefig('figures_pdf/figure8.pdf', bbox_inches="tight", dpi=300)
+#plt.savefig('figures_pdf/figure8.pdf', bbox_inches="tight", dpi=300)
+plt.savefig('figures_pdf/figure8.jpeg', bbox_inches="tight", dpi=300)
