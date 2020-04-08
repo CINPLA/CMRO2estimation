@@ -4,6 +4,8 @@
 # figure1e.m
 # (The numbers that are used in panel B and D have been extracted manually from A and C.)
 
+import warnings
+warnings.filterwarnings("ignore")
 import scipy.io as sio
 import matplotlib.pyplot as plt
 import numpy as np
@@ -47,7 +49,7 @@ ax1.set_yticks([0,1])
 ax1.axvline(x=3.76e-3, ymax=0.525, color='k', ls=':')
 ax1.axhline(y=0.5, xmax=0.0752, color='k', ls=':')
 # title and labels
-ax1.set_title('$\delta\mathrm{_{smooth}}$ ($\hat{d}=0.005$)')
+ax1.set_title('$\delta\mathrm{_{smooth}}$ ($\hat{d}\mathrm{_{data}}=0.005$)')
 ax1.set_xlabel('$\hat{r}$')
 ax1.set_ylabel('$\delta\mathrm{_{smooth}}$')
 # ticks
@@ -78,7 +80,7 @@ for i in range(0,4):
     else:
         ax3.plot(r, delta_smooth, '-', color=tableau10cb[i], markeredgecolor=tableau10cb[i], label=str(d))
 leg = ax3.legend(frameon=0, fontsize='x-small')
-leg.set_title('$\hat{d}$', prop={'size':'small'})
+leg.set_title('$\hat{d}\mathrm{_{data}}$', prop={'size':'small'})
 # axes
 ax3.set_xlim(0, 0.3)
 ax3.set_ylim(-0.05, 1)
@@ -102,8 +104,8 @@ ax4.loglog(d, d_q, '-o', color=tableau10cb[0], markeredgecolor=tableau10cb[0])
 ax4.set_xlim(1e-3, 1e-1)
 ax4.set_ylim(1e-2, 1)
 # title and labels
-ax4.set_title('$\hat{d}_\mathrm{q}$ vs $\hat{d}$')
-ax4.set_xlabel('$\hat{d}$')
+ax4.set_title('$\hat{d}_\mathrm{q}$ vs $\hat{d}_\mathrm{_{data}}$')
+ax4.set_xlabel('$\hat{d}_\mathrm{data}$')
 ax4.set_ylabel('$\hat{d}_\mathrm{q}$')
 
 ## E ##
@@ -115,9 +117,9 @@ for i in range(0,2):
     q = data['q'][0][0]
     delta_smooth = data['delta_smooth_vector']
     if i == 0:
-        ax5.plot(r, delta_smooth, '-', color=tableau10cb[i], markeredgecolor=tableau10cb[i], label='$q$ = {}\n'.format(fmt(q))+'$\hat{d}$'+' = {}'.format(fmt(d)))
+        ax5.plot(r, delta_smooth, '-', color=tableau10cb[i], markeredgecolor=tableau10cb[i], label='$q$ = {}\n'.format(fmt(q))+'$\hat{d}_\mathrm{data}$'+' = {}'.format(fmt(d)))
     elif i == 1:
-        ax5.plot(r, delta_smooth, 'o', color=tableau10cb[i], markeredgecolor=tableau10cb[i], label='$q$ = {}\n'.format(fmt(q))+'$\hat{d}$'+' = {}'.format(fmt(d)))
+        ax5.plot(r, delta_smooth, 'o', color=tableau10cb[i], markeredgecolor=tableau10cb[i], label='$q$ = {}\n'.format(fmt(q))+'$\hat{d}_\mathrm{data}$'+' = {}'.format(fmt(d)))
 ax5.legend(frameon=0, fontsize='x-small')
 # axes
 ax5.set_xlim(0, 0.2)
@@ -147,5 +149,4 @@ for ax in [ax1, ax2, ax3, ax4, ax5]:
     i += 1
 
 plt.tight_layout()
-#plt.savefig('figures_pdf/figure1.pdf', dpi=300)
-plt.savefig('figures_pdf/figure1.jpeg', dpi=300)
+plt.savefig('figures_pdf/figure1.pdf', dpi=300)

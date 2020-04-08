@@ -9,7 +9,7 @@ d_est = 0.001;
 d_q = 0.04;
 seed = 1;
 
-load('data/figure7/groundTruth_varyingM.mat')
+load('data/figure7/ground_truth_varying_M.mat')
 Hx_est = min(Hx_data):d_est:max(Hx_data);
 Hy_est = min(Hy_data):d_est:max(Hy_data);
 

@@ -15,7 +15,7 @@ M_star = 1.0e-3
 
 r_ves = 6/R_star
 p_ves = [80/(M_star*R_star**2)]
-M = Expression("2-1.5*(x[1]<1)", degree=4)
+M = Expression("2-1.5*( (pow((x[1]-1),2) + pow((x[0]-1),2)) > 0.7 )", degree=4)
          
 p_solution, mesh = solve_poisson_rectangle(corners, vessel_coor, r_ves, p_ves, M, resolution)
 mesh_coor =  mesh.coordinates()
@@ -26,7 +26,7 @@ mesh_coor =  mesh.coordinates()
 #plt.show()
 
 d = 0.007
-filename = 'data/figure7/groundTruth_varyingM'
+filename = 'data/figure7/ground_truth_varying_M.mat'
 x = np.arange(0, 2.0001, d)
 y = np.arange(0, 2.0001, d)
 

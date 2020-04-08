@@ -1,6 +1,8 @@
 # To run this code you must download the data folder
 # or run figure5.m.
 
+import warnings
+warnings.filterwarnings("ignore")
 import scipy.io as sio
 import matplotlib.pyplot as plt
 import numpy as np
@@ -97,5 +99,4 @@ for i in range(0,3):
         axarr[0,i].set_xlabel('$\hat{d}\mathrm{_q}=%.2f$' % a['d_q'])
     axarr[0,i].xaxis.set_label_position('top')
 
-#plt.savefig('figures_pdf/figure5.pdf', dpi=300)
-plt.savefig('figures_pdf/figure5.jpeg', dpi=300)
+plt.savefig('figures_pdf/figure5.pdf', dpi=300)

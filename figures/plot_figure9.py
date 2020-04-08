@@ -1,6 +1,8 @@
 # To run this code you must download the data folder
 # or run figure9.m.
 
+import warnings
+warnings.filterwarnings("ignore")
 import scipy.io as sio
 import matplotlib.pyplot as plt
 import numpy as np

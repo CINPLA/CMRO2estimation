@@ -9,25 +9,18 @@ seed = 1;
 filename = 'data/figure2/figure2_a';
 generatedata_figure2_1D(d_data, sigma, seed, filename)
 
-% B
-d_data = 1;
-sigma = 0.001;
-seed = 1;
-filename = 'data/figure2/figure2_b';
-generatedata_figure2_1D(d_data, sigma, seed, filename)
-
 % CD
 d_data = 0.007;
 sigma = 0;
 seed = 1;
-filename = 'data/figure2/figure2_cd';
+filename = 'data/figure2/figure2_bc';
 generatedata_figure2_2D_nosmoothing(d_data, sigma, seed, filename)
 
 % EF
 d_data = 0.007;
 sigma = 0.0005;
 seed = 1;
-filename = 'data/figure2/figure2_ef';
+filename = 'data/figure2/figure2_def';
 generatedata_figure2_2D_nosmoothing(d_data, sigma, seed, filename)
 
 % GH
