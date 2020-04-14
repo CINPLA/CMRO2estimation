@@ -125,6 +125,8 @@ ax5.legend(frameon=0, fontsize='x-small')
 ax5.set_xlim(0, 0.2)
 ax5.set_ylim(-0.05, 1)
 ax5.set_yticks([0,1])
+ax5.set_xticks([0, 5.6e-2, 0.1, 0.2])
+ax5.set_xticklabels([0, '$\hat{d}_\mathrm{q}$', 0.1, 0.2])
 # dotted line
 ax5.axvline(x=5.6e-2, ymax=0.525, color='k', ls=':')
 ax5.axhline(y=0.5, xmax=0.28, color='k', ls=':')
