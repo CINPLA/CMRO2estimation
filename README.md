@@ -1,6 +1,7 @@
-# Spatially Resolved Estimation of Metabolic Oxygen Consumption From Optical Measurements in Cortex
+# Spatially resolved estimation of metabolic oxygen consumption from optical measurements in cortex
 
-This code was used to produce the results presented in Sætra et al. 20XX: [paper]
+This code was used to produce the results presented in Sætra et al., *Neurophotonics*, 7(3), 035008 (2020): 
+[Spatially resolved estimation of metabolic oxygen consumption from optical measurements in cortex](https://doi.org/10.1117/1.NPh.7.3.035005)
 
 ## Requirements 
 
